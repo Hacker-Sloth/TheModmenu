@@ -187,6 +187,13 @@ javascript:(function() {
                 <li><a href="#" id="autoBrowse" style="color: #666; text-decoration: none; border: 1px solid lightgray; padding: 5px; display: block; border-radius: 5px; margin-bottom: 5px;">Auto Browse</a></li>
                 <li><a href="#" id="startGame" style="color: #666; text-decoration: none; border: 1px solid lightgray; padding: 5px; display: block; border-radius: 5px; margin-bottom: 5px;">Start Game</a></li>
                 <li><a href="#" id="colorDrop" style="color: #666; text-decoration: none; border: 1px solid lightgray; padding: 5px; display: block; border-radius: 5px; margin-bottom: 5px;">Color Drop</a></li>
+                <p style="color: gray; font-size: small;">
+                Made by Hacker-Sloth 
+                <span style="font-size: x-small;">
+                    Copyright © 2023 by Isaac Wong.
+                </span>
+            </p>
+
             </ul>
         </div>
     </div>`;
