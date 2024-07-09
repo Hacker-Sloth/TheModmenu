@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Modmenu - Bookmarklet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="text-white font-semibold text-lg">The Modmenu</div>
+                </div>
+                <div class="block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#instructions" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Instructions</a>
+                        <a href="#features" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900">Welcome to The Modmenu Bookmarklet</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <div id="instructions" class="px-4 py-6 sm:px-0">
+                <h2 class="text-2xl font-semibold text-gray-800">Instructions</h2>
+                <p class="mt-4 text-gray-600">To add The Modmenu to your bookmarks, simply drag the button below to your bookmarks bar:</p>
+                <div class="mt-4">
+                    <a href="javascript:(function()%7B%20function%20changeBgColor()%20%7B%20document.body.style.backgroundColor%20%3D%20'%23'%20%2B%20Math.floor(Math.random()%20*%2016777215).toString(16)%3B%20%7D%20function%20toggleImages()%20%7B%20let%20images%20%3D%20document.getElementsByTagName('img')%3B%20for%20(let%20img%20of%20images)%20%7B%20img.style.display%20%3D%20(img.style.display%20%3D%3D%20'none'%20%3F%20'block'%20%3A%20'none')%3B%20%7D%20%7D%20function%20getPageInfo()%20%7B%20alert('Title%3A%20'%20%2B%20document.title%20%2B%20'%5CnURL%3A%20'%20%2B%20window.location.href)%3B%20%7D%20function%20highlightText()%20%7B%20let%20color%20%3D%20prompt('Enter%20highlight%20color%20(e.g.%2C%20yellow%2C%20%23FF0)%3A'%2C%20'yellow')%3B%20if%20(color)%20%7B%20let%20selection%20%3D%20window.getSelection()%3B%20if%20(selection.rangeCount%20%3E%200)%20%7B%20let%20range%20%3D%20selection.getRangeAt(0)%3B%20let%20span%20%3D%20document.createElement('span')%3B%20span.style.backgroundColor%20%3D%20color%3B%20range.surroundContents(span)%3B%20%7D%20%7D%20%7D%20let%20modMenu%20%3D%20document.createElement('div')%3B%20modMenu.innerHTML%20%3D%20'%3Cdiv%20id%3D%22modmenu%22%20style%3D%22display%3Anone%3B%20position%3A%20fixed%3B%20top%3A%2050px%3B%20right%3A%2050px%3B%20background%3A%20%23f9f9f9%3B%20border%3A%201px%20solid%20%23ccc%3B%20padding%3A%2010px%3B%20box-shadow%3A%200%200%2010px%20rgba(0%2C0%2C0%2C0.1)%3B%20z-index%3A%2010000%3B%20border-radius%3A%2010px%3B%20width%3A%20300px%3B%22%3E%20%3Cdiv%20id%3D%22modmenu-header%22%20style%3D%22cursor%3A%20move%3B%20background%3A%20%23e0e0e0%3B%20padding%3A%2010px%3B%20border-bottom%3A%201px%20solid%20%23ccc%3B%20border-radius%3A%2010px%2010px%200%200%3B%20display%3A%20flex%3B%20justify-content%3A%20space-between%3B%20align-items%3A%20center%3B%22%3E%20%3Cspan%20style%3D%22font-weight%3A%20bold%3B%20color%3A%20%23333%3B%22%3E%3Cimg%20src%3D%22https%3A%2F%2Fwww.freepnglogos.com%2Fuploads%2Fpanda-png%2Fpanda-face-icon-noto-emoji-animals-nature-iconset-google-21.png%22%20style%3D%22width%3A%2020px%3B%20height%3A%2020px%3B%20vertical-align%3A%20middle%3B%20margin-right%3A%205px%3B%22%3EThe%20Modmenu%3C%2Fspan%3E%20%3Cdiv%3E%20%3Cbutton%20id%3D%22minimize-modmenu%22%20style%3D%22background%3A%20yellow%3B%20border%3A%201px%20solid%20lightgray%3B%20font-size%3A%2010px%3B%20cursor%3A%20pointer%3B%20border-radius%3A%2050%25%3B%20width%3A%2015px%3B%20height%3A%2015px%3B%22%3E%3C%2Fbutton%3E%20%3Cbutton%20id%3D%22close-modmenu%22%20style%3D%22background%3A%20red%3B%20border%3A%201px%20solid%20lightgray%3B%20font-size%3A%2010px%3B%20cursor%3A%20pointer%3B%20border-radius%3A%2050%25%3B%20width%3A%2015px%3B%20height%3A%2015px%3B%22%3E%3C%2Fbutton%3E%20%3C%2Fdiv%3E%20%3C%2Fdiv%3E%20%3Cdiv%20id%3D%22modmenu-content%22%20style%3D%22padding%3A%2010px%3B%22%3E%20%3Cul%20style%3D%22padding%3A%200%3B%20margin%3A%200%3B%22%3E%20%3Cli%3E%3Ca%20href%3D%22%23%22%20id%3D%22changeBgColor%22%20style%3D%22color%3A%20%23666%3B%20text-decoration%3A%20none%3B%20border%3A
+
+%201px%20solid%20lightgray%3B%20padding%3A%205px%3B%20display%3A%20block%3B%20border-radius%3A%205px%3B%20margin-bottom%3A%205px%3B%22%3EChange%20Background%20Color%3C%2Fa%3E%3C%2Fli%3E%20%3Cli%3E%3Ca%20href%3D%22%23%22%20id%3D%22toggleImages%22%20style%3D%22color%3A%20%23666%3B%20text-decoration%3A%20none%3B%20border%3A%201px%20solid%20lightgray%3B%20padding%3A%205px%3B%20display%3A%20block%3B%20border-radius%3A%205px%3B%20margin-bottom%3A%205px%3B%22%3EToggle%20Images%3C%2Fa%3E%3C%2Fli%3E%20%3Cli%3E%3Ca%20href%3D%22%23%22%20id%3D%22getPageInfo%22%20style%3D%22color%3A%20%23666%3B%20text-decoration%3A%20none%3B%20border%3A%201px%20solid%20lightgray%3B%20padding%3A%205px%3B%20display%3A%20block%3B%20border-radius%3A%205px%3B%20margin-bottom%3A%205px%3B%22%3EGet%20Page%20Info%3C%2Fa%3E%3C%2Fli%3E%20%3Cli%3E%3Ca%20href%3D%22%23%22%20id%3D%22highlightText%22%20style%3D%22color%3A%20%23666%3B%20text-decoration%3A%20none%3B%20border%3A%201px%20solid%20lightgray%3B%20padding%3A%205px%3B%20display%3A%20block%3B%20border-radius%3A%205px%3B%20margin-bottom%3A%205px%3B%22%3EHighlight%20Text%3C%2Fa%3E%3C%2Fli%3E%20%3C%2Ful%3E%20%3C%2Fdiv%3E%20%3C%2Fdiv%3E%3B%20document.body.appendChild(modMenu)%3B%20let%20modMenuDiv%20%3D%20document.getElementById('modmenu')%3B%20let%20modMenuHeader%20%3D%20document.getElementById('modmenu-header')%3B%20let%20modMenuContent%20%3D%20document.getElementById('modmenu-content')%3B%20modMenuDiv.style.display%20%3D%20'block'%3B%20document.getElementById('changeBgColor').addEventListener('click'%2C%20changeBgColor)%3B%20document.getElementById('toggleImages').addEventListener('click'%2C%20toggleImages)%3B%20document.getElementById('getPageInfo').addEventListener('click'%2C%20getPageInfo)%3B%20document.getElementById('highlightText').addEventListener('click'%2C%20highlightText)%3B%20document.getElementById('close-modmenu').addEventListener('click'%2C%20function()%20%7B%20modMenuDiv.style.display%20%3D%20'none'%3B%20%7D)%3B%20document.getElementById('minimize-modmenu').addEventListener('click'%2C%20function()%20%7B%20modMenuContent.style.display%20%3D%20(modMenuContent.style.display%20%3D%3D%20'none'%20%3F%20'block'%20%3A%20'none')%3B%20%7D)%3B%20let%20isDragging%20%3D%20false%3B%20modMenuHeader.onmousedown%20%3D%20function(event)%20%7B%20isDragging%20%3D%20true%3B%20let%20shiftX%20%3D%20event.clientX%20-%20modMenuDiv.getBoundingClientRect().left%3B%20let%20shiftY%20%3D%20event.clientY%20-%20modMenuDiv.getBoundingClientRect().top%3B%20function%20moveAt(pageX%2C%20pageY)%20%7B%20modMenuDiv.style.left%20%3D%20pageX%20-%20shiftX%20%2B%20'px'%3B%20modMenuDiv.style.top%20%3D%20pageY%20-%20shiftY%20%2B%20'px'%3B%20%7D%20function%20onMouseMove(event)%20%7B%20if%20(isDragging)%20%7B%20moveAt(event.pageX%2C%20event.pageY)%3B%20%7D%20%7D%20document.addEventListener('mousemove'%2C%20onMouseMove)%3B%20document.onmouseup%20%3D%20function()%20%7B%20isDragging%20%3D%20false%3B%20document.removeEventListener('mousemove'%2C%20onMouseMove)%3B%20document.onmouseup%20%3D%20null%3B%20%7D%3B%20%7D%3B%20modMenuHeader.ondragstart%20%3D%20function()%20%7B%20return%20false%3B%20%7D%3B%20modMenuDiv.style.display%20%3D%20'block'%3B%20%7D)();"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        The Modmenu
+                    </a>
+                </div>
+            </div>
+
+            <div id="features" class="mt-10">
+                <h2 class="text-2xl font-semibold text-gray-800">Features</h2>
+                <ul class="mt-4 space-y-4">
+                    <li class="text-gray-600">Change Background Color</li>
+                    <li class="text-gray-600">Toggle Images</li>
+                    <li class="text-gray-600">Get Page Info</li>
+                    <li class="text-gray-600">Highlight Text</li>
+                    <!-- Additional features can be listed here -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <p class="text-center text-sm">The Modmenu © 2023</p>
+        </div>
+    </footer>
+
+</body>
+</html>
